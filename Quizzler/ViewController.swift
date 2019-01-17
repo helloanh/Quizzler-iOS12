@@ -40,8 +40,9 @@ class ViewController: UIViewController {
       checkAnswer()
       // increment questionNumber to go to next question
       questionNumber += 1
-      // update view of QuestionLabel to the next question
-      questionLabel.text = allQuestions.list[questionNumber].questionText
+
+      nextQuestion()
+
     }
     
     
@@ -51,12 +52,20 @@ class ViewController: UIViewController {
     
 
     func nextQuestion() {
-        
+      if questionNumber <= 12 {
+         // update view of QuestionLabel to the next question
+         questionLabel.text = allQuestions.list[questionNumber].questionText
+      }
+      else {
+         print("End of Quiz")
+         questionNumber = 0
+      }
+
     }
     
     
    func checkAnswer() {
-      let correctAnswer = allQuestions.list[0].answer
+      let correctAnswer = allQuestions.list[questionNumber].answer
 
       if correctAnswer == pickedAnswer {
          print("You got it!")
