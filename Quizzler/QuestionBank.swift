@@ -8,7 +8,7 @@
 
 import Foundation
 
-class questionBank {
+class QuestionBank {
    // list property with array of Question object
    var list = [Question]()
    init() {
@@ -41,6 +41,6 @@ class questionBank {
 
       list.append(Question(text: "No piece of square dry paper can be folded in half more than 7 times.", correctAnswer: false))
 
-      list.append(Question(text: "Chocolate affects a dog\'s heart and nervous system; a few ounces are eno
+      list.append(Question(text: "Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.", correctAnswer: true))
    }
 }
