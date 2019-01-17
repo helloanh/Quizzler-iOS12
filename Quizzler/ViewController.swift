@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
    let allQuestions = QuestionBank()
    var pickedAnswer : Bool = false
+   // keep track of the state of our question list
+   var questionNumber: Int = 0
 
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -22,7 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // create first question
-        let firstQuestion = allQuestions.list[0]
+        let firstQuestion = allQuestions.list[questionNumber]
         // make label display question text
         questionLabel.text = firstQuestion.questionText
     }
@@ -36,6 +38,10 @@ class ViewController: UIViewController {
          pickedAnswer = false
       }
       checkAnswer()
+      // increment questionNumber to go to next question
+      questionNumber += 1
+      // update view of QuestionLabel to the next question
+      questionLabel.text = allQuestions.list[questionNumber].questionText
     }
     
     
@@ -64,7 +70,5 @@ class ViewController: UIViewController {
     func startOver() {
        
     }
-    
 
-    
 }
