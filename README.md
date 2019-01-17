@@ -2,7 +2,7 @@
 
 #  Quizzler
 
-## Our Goal
+## Goal
 
 Quiz app using the the Model View Controller (MVC) pattern for iOS v12. 
 
@@ -59,6 +59,5 @@ Quiz app using the the Model View Controller (MVC) pattern for iOS v12.
         
 
 
->This is a companion project to The App Brewery's Complete App Developement Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
+>This is a project based on The App Brewery's Complete App Developement course, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
 
-![End Banner](Documentation/readme-end-banner.png)
