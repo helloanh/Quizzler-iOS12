@@ -14,6 +14,8 @@ class ViewController: UIViewController {
    var pickedAnswer : Bool = false
    // keep track of the state of our question list
    var questionNumber: Int = 0
+   // keep track of the state of our score
+   var score: Int = 0
 
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
          pickedAnswer = false
       }
       checkAnswer()
+
       // increment questionNumber to go to next question
       questionNumber += 1
 
@@ -44,7 +47,9 @@ class ViewController: UIViewController {
     
     
     func updateUI() {
-      
+      scoreLabel.text = "Score: \(score)"
+      progressLabel.text = "\(questionNumber + 1) / 13"
+      progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNumber + 1)
     }
     
 
@@ -52,6 +57,7 @@ class ViewController: UIViewController {
       if questionNumber <= 12 {
          // update view of QuestionLabel to the next question
          questionLabel.text = allQuestions.list[questionNumber].questionText
+         updateUI()
       }
       else {
          let alert = UIAlertController(title: "Congrats",
@@ -74,6 +80,7 @@ class ViewController: UIViewController {
 
       if correctAnswer == pickedAnswer {
          print("You got it!")
+         score += 1
       }
       else {
          print("Wrong.")
@@ -83,6 +90,7 @@ class ViewController: UIViewController {
     
     func startOver() {
        questionNumber = 0
+       score = 0
        nextQuestion()
     }
 
