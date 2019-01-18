@@ -23,10 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // create first question
-        let firstQuestion = allQuestions.list[questionNumber]
-        // make label display question text
-        questionLabel.text = firstQuestion.questionText
+        nextQuestion()
     }
 
 
